@@ -3346,10 +3346,11 @@ tarteaucitron.services.sendinblue = {
   "type": "analytic",
   "name": "SendinBlue tracker",
   "needConsent": true,
-  "cookies": ['sib_cuid'],
+  "cookies": ['sib_cuid', 'uuid'],
   "js": function () {
     "use strict";
     // When user allow cookie
+    (function() {
       window.sib = {
         equeue: [],
         client_key: tarteaucitron.user.sendinblueID
